@@ -34,3 +34,51 @@ You can install the required Python libraries using `requirements.txt` by runnin
 
 ```bash
 pip install -r requirements.txt
+
+
+
+
+
+
+Setup Instructions
+Clone the repository:
+
+
+git clone https://github.com/your-username/Health-Records-Management-System.git
+Navigate to the project directory:
+
+
+cd Health-Records-Management-System
+Install dependencies:
+
+
+pip install -r requirements.txt
+Run the application:
+
+
+python app.py
+Access the application: Open your browser and go to http://127.0.0.1:5000.
+
+Features in Detail
+1. Login Page
+Patients and doctors can log in using their respective roles.
+After successful login, users are redirected to their role-specific dashboards.
+2. Patient Dashboard
+Patients can view their medical records.
+They can also add new records including appointments, prescriptions, and lab reports.
+3. Doctor Dashboard
+Doctors can view all patients' medical records, including appointments, prescriptions, and lab reports.
+4. Registration Page
+Users (patients or doctors) can create a new account with a username, password, and role selection.
+Project Structure
+app.py: The main Python file for the Flask application.
+templates/: Directory containing all HTML templates for the login page, dashboards, and registration.
+health_records.db: The SQLite database that stores user information and medical records (this will be created automatically upon running the app).
+requirements.txt: A text file containing all the necessary Python libraries for the project.
+.gitignore: Git ignore file to exclude unnecessary files like *.pyc and health_records.db.
+Running the App
+Once the app is running, you can access it in your browser by going to:
+
+
+http://127.0.0.1:5000
+You will see the login page where you can log in as a patient or doctor, or register a new account.
