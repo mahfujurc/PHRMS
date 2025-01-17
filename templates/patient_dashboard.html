@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ session['username'] }}</h2>
+    <h3>Your Medical Records:</h3>
+    <table>
+        <tr>
+            <th>Appointment Date</th>
+            <th>Prescription</th>
+            <th>Lab Report</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record['appointment_date'] }}</td>
+            <td>{{ record['prescription'] }}</td>
+            <td>{{ record['lab_report'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Add New Medical Record:</h3>
+    <form method="POST" action="/add_record">
+        <label for="appointment_date">Appointment Date:</label>
+        <input type="text" name="appointment_date" required><br><br>
+
+        <label for="prescription">Prescription:</label>
+        <input type="text" name="prescription"><br><br>
+
+        <label for="lab_report">Lab Report:</label>
+        <input type="text" name="lab_report"><br><br>
+
+        <button type="submit">Add Record</button>
+    </form>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>
